@@ -1,4 +1,4 @@
-# Sistema de Gerenciamento Empresarial | CHOCOLATES GAROTO
+# Sistema de Gerenciamento Empresarial | GAROTO
 
 Este é um sistema de cadastro de usuários desenvolvido em React no frontend e Node.js no backend, utilizando MySQL como banco de dados.
 
