@@ -8,6 +8,9 @@ const cadastroFuncionariosRoutes = require('./cadastroFuncionarios-routes ');
 const cadastroProdutosRoutes = require('./cadastroProdutos-routes ');
 const contasAReceberRoutes = require('./contasAReceber-routes');
 const registroVendasRoutes = require('./registroVendas-routes');
+const historicoClientesRoutes = require('./historicoClientes-routes');
+const controleEstoqueRoutes = require('./controleEstoque-Routes');
+const cadastroLoginRoutes = require('./cadastroLogin-Routes');
 
 const app = express();
 const port = 3001; // Defina a porta que deseja utilizar
@@ -24,6 +27,9 @@ app.use('/', cadastroFuncionariosRoutes);
 app.use('/', cadastroProdutosRoutes);
 app.use('/', contasAReceberRoutes);
 app.use('/', registroVendasRoutes);
+app.use('/', historicoClientesRoutes);
+app.use('/', controleEstoqueRoutes);
+app.use('/', cadastroLoginRoutes);
 
 
 app.listen(port, () => {

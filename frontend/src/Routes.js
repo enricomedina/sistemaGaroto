@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Contato from "./Pages/Contato";
 import CadastroClientes from "./Pages/CadastroClientes";
 import CadastroFornecedores from "./Pages/CadastroFornecedores";
 import CadastroFuncionarios from "./Pages/CadastroFuncionarios";
@@ -16,13 +15,14 @@ import TabelaCadastroProdutos from "./Pages/ListaCadastroProdutos";
 import TabelaContasAPagar from "./Pages/ListaContasAPagar";
 import TabelaContasAReceber from "./Pages/ListaContasAReceber";
 import TabelaRegistroVendas from "./Pages/ListaRegistroVendas";
+import CadastroLogin from "./Pages/CadastroLogin";
 
 const Rotas = () => {
   return (
     <>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/contato" element={<Contato />} />
+        <Route path="/cadastroLogin" element={<CadastroLogin />} />
         <Route path="/cadastroClientes" element={<CadastroClientes />} />
         <Route path="/cadastroFornecedores" element={<CadastroFornecedores />} />
         <Route path="/cadastroFuncionarios" element={<CadastroFuncionarios />} />
