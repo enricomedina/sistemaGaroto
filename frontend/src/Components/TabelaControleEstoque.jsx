@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const TabelaHistoricoClientes = () => {
-  const [historicoClientes, sethistoricoClienets] = useState([]);
+const TabelaControleEstoque = () => {
+  const [controleEstoque, setcontroleEstoque] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/historicoClientes");
-        sethistoricoClienets(data);
+        const { data } = await axios.get("http://localhost:3001/controleEstoque");
+        setcontroleEstoque(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
       }
@@ -19,10 +19,10 @@ const TabelaHistoricoClientes = () => {
 
   const handleExcluirUsuario = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/historicoClientes/${id}`);
+      await axios.delete(`http://localhost:3001/controleEstoque/${id}`);
       // Atualiza a lista de cadastros após a exclusão
       const { data } = await axios.get("http://localhost:3001/historicoClientes");
-      setregistroVendas(data);
+      setcontroleEstoque(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {
       console.error("Erro ao excluir usuário:", error);
@@ -35,32 +35,26 @@ const TabelaHistoricoClientes = () => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nome:</th>
-            <th>Sobrenome:</th>
-            <th>Data da interação:</th>
-            <th>Tipo de interação:</th>
-            <th>Resultado da interação:</th>
-            <th>Descrição da interação:</th>
-            <th>Id da venda: </th>
+            <th> Quantidade:</th>
+            <th>Data da Entrada:</th>
+            <th>Data da Saída:</th> 
+            <th>Id do produto: </th>
             <th>Ação</th>
             {/* Adicione mais colunas, se necessário */}
           </tr>
         </thead>
         <tbody>
-          {historicoClientes.map((historicoClientes) => (
-            <tr key={historicoClientes.id}>
-              <td>{historicoClientes.id}</td>
-              <td>{historicoClientes.nome}</td>
-              <td>{historicoClientes.sobrenome}</td>
-              <td>{historicoClientes.dataHora}</td>
-              <td>{historicoClientes.tipoInteracao}</td>
-              <td>{historicoClientes.resultadoInteracao}</td>
-              <td>{historicoClientes.descricaoInteracao}</td>
-              <td>{historicoClientes.idregistroVendas}</td>
+          {controleEstoque.map((controleEstoque) => (
+            <tr key={controleEstoque.id}>
+              <td>{controleEstoque.id}</td>
+              <td>{controleEstoque.quantidade}</td>
+              <td>{controleEstoque.dataEntrada}</td>
+              <td>{controleEstoque.dataSaida}</td>
+              <td>{controleEstoque.idCadastroProdutos}</td>
               <td>
                 <button
                   variant="danger"
-                  onClick={() => handleExcluirUsuario(historicoClientes.id)}
+                  onClick={() => handleExcluirUsuario(controleEstoque.id)}
                 >
                   Excluir
                 </button>
@@ -74,4 +68,4 @@ const TabelaHistoricoClientes = () => {
   );
 };
 
-export default TabelaHistoricoClientes;
+export default TabelaControleEstoque;

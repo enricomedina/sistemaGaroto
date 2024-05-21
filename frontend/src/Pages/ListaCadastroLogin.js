@@ -1,16 +1,16 @@
 //Lista de Clientes
 import React from "react";
-import TabelaCadastroClientes from "../Components/TabelaCadastroClientes";
+import TabelaCadastroLogin from "../Components/TabelaCadastroLogin"
 
-const ListaClientes = () => {
+const ListaLogin = () => {
   return (
     <>
       <div>
-        <h2>Lista Cadastro de Clientes</h2>
-        <TabelaCadastroClientes />
+        <h2>Lista Cadastro de Login</h2>
+        <TabelaCadastroLogin/>
       </div>
     </>
   );
 };
 
-export default ListaClientes;
+export default ListaLogin;

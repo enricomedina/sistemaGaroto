@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const CadastroLoginItem = ({ cadastroLogin, onDelete }) => {
@@ -7,11 +8,14 @@ const CadastroLoginItem = ({ cadastroLogin, onDelete }) => {
       <td>{cadastroLogin.usuario}</td>
       <td>{cadastroLogin.email}</td>
       <td>{cadastroLogin.senha}</td>
+      <td>{cadastroLogin.idCadastroFuncionarios}</td>
       <td>
         <button onClick={() => onDelete(cadastroLogin.id)}>Excluir</button>
       </td>
     </tr>
+
   );
 };
 
-export default CadastroLoginItem ;
+export default CadastroLoginItem;
+

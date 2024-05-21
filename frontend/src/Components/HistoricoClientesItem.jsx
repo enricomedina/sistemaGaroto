@@ -10,7 +10,7 @@ const HistoricoClientesItem = ({ historicoClientes, onDelete }) => {
       <td>{historicoClientes.tipoInteracao}</td>
       <td>{historicoClientes.resultadoInteracao}</td>
       <td>{historicoClientes.descricaoInteracao}</td>
-      <td>{historicoClientes.idregistroVendas}</td>
+      <td>{historicoClientes.idRegistroVendas}</td>
       <td>
         <button onClick={() => onDelete(historicoClientes.id)}>Excluir</button>
       </td>

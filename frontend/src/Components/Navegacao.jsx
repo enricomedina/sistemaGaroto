@@ -22,6 +22,12 @@ const Header = () => {
             <Link to="/cadastroClientes">Cadastro de Clientes</Link>
           </li>
           <li>
+            <Link to="/historicoClientes">Histórico de interação de clientes</Link>
+          </li>
+          <li>
+            <Link to="/controleEstoque">Controle de Estoque</Link>
+          </li>
+          <li>
             <Link to="/registroVendas">Registro de Vendas</Link>
           </li>
           <li>
@@ -41,6 +47,12 @@ const Header = () => {
           </li>
           <li>
             <Link to="/listaCadastroClientes">Lista Cadastro de Clientes</Link>
+          </li>
+          <li>
+            <Link to="/listaControleEstoque">Lista Controle de Estoque</Link>
+          </li>
+          <li>
+            <Link to="/listaHistoricoClientes">Lista Histórico de Interação de clientes</Link>
           </li>
           <li>
             <Link to="/listaCadastroLogin">Lista Cadastro de Login</Link>

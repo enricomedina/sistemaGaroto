@@ -1,21 +1,18 @@
 import React from 'react';
 
-const HistoricoClientesItem = ({ historicoClientes, onDelete }) => {
+const ControleEstoqueItem = ({ controleEstoque, onDelete }) => {
   return (
     <tr>
-      <td>{historicoClientes.id}</td>
-      <td>{historicoClientes.nome}</td>
-      <td>{historicoClientes.sobrenome}</td>
-      <td>{historicoClientes.dataHora}</td>
-      <td>{historicoClientes.tipoInteracao}</td>
-      <td>{historicoClientes.resultadoInteracao}</td>
-      <td>{historicoClientes.descricaoInteracao}</td>
-      <td>{historicoClientes.idregistroVendas}</td>
+      <td>{controleEstoque.id}</td>
+      <td>{controleEstoque.quantidade}</td>
+      <td>{controleEstoque.dataEntrada}</td>
+      <td>{controleEstoque.dataSaida}</td>
+      <td>{controleEstoque.idCadastroProdutos}</td>
       <td>
-        <button onClick={() => onDelete(historicoClientes.id)}>Excluir</button>
+        <button onClick={() => onDelete(controleEstoque.id)}>Excluir</button>
       </td>
     </tr>
   );
 };
 
-export default HistoricoClientesItem;
+export default ControleEstoqueItem;

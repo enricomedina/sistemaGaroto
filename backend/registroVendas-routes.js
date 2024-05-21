@@ -60,7 +60,6 @@ router.put('/registroVendas/:id', (req, res) => {
     });
 });
 
-// Rota para excluir um registro pelo ID
 router.delete('/registroVendas/:id', (req, res) => {
   const { id } = req.params;
   connection.query('DELETE FROM registroVendas WHERE idRegistroVendas = ?', [id], (err, result) => {
@@ -72,5 +71,4 @@ router.delete('/registroVendas/:id', (req, res) => {
     res.json({ message: 'Registro excluído com sucesso' });
   });
 });
-
 module.exports = router;

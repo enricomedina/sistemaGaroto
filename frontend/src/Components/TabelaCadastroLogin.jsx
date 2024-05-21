@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const TabelaRegistroVendas = () => {
-  const [registroVendas, setregistroVendas] = useState([]);
+const TabelaCadastroLogin = () => {
+  const [cadastroLogin, setcadastroLogin] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/registroVendas");
-        setregistroVendas(data);
+        const { data } = await axios.get("http://localhost:3001/cadastroLogin");
+        setcadastroLogin(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
       }
@@ -19,10 +19,10 @@ const TabelaRegistroVendas = () => {
 
   const handleExcluirUsuario = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/registroVendas/${id}`);
+      await axios.delete(`http://localhost:3001/cadastroLogin/${id}`);
       // Atualiza a lista de cadastros após a exclusão
-      const { data } = await axios.get("http://localhost:3001/registroVendas");
-      setregistroVendas(data);
+      const { data } = await axios.get("http://localhost:3001/cadastroLogin");
+      setcadastroLogin(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {
       console.error("Erro ao excluir usuário:", error);
@@ -35,34 +35,26 @@ const TabelaRegistroVendas = () => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nome do Produto</th>
-            <th>Data e Hora da Venda</th>
-            <th>Itens Vendidos</th>
-            <th>Total da Venda</th>
-            <th>Método de Pagamento</th>
-            <th>Número de Fatura</th>
-            <th>Status da Venda</th>
-            <th>Observações</th>
+            <th>Usuário</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Id de cadastro do funcionário</th>
             <th>Ação</th>
             {/* Adicione mais colunas, se necessário */}
           </tr>
         </thead>
         <tbody>
-          {registroVendas.map((registroVendas) => (
-            <tr key={registroVendas.idRegistroVendas}>
-              <td>{registroVendas.idRegistroVendas}</td>
-              <td>{registroVendas.nomeProduto}</td>
-              <td>{registroVendas.dataHoraVenda}</td>
-              <td>{registroVendas.itensVendidos}</td>
-              <td>{registroVendas.totalVenda}</td>
-              <td>{registroVendas.metodoPagamento}</td>
-              <td>{registroVendas.numeroFatura}</td>
-              <td>{registroVendas.statusVenda}</td>
-              <td>{registroVendas.observacoes}</td>
+          {cadastroLogin.map((cadastroLogin) => (
+            <tr key={cadastroLogin.id}>
+              <td>{cadastroLogin.id}</td>
+              <td>{cadastroLogin.usuario}</td>
+              <td>{cadastroLogin.email}</td>
+              <td>{cadastroLogin.senha}</td>
+              <td>{cadastroLogin.idCadastroFuncionarios}</td>
               <td>
                 <button
                   variant="danger"
-                  onClick={() => handleExcluirUsuario(registroVendas.idregistroVendas)}
+                  onClick={() => handleExcluirUsuario(cadastroLogin.id)}
                 >
                   Excluir
                 </button>
@@ -75,5 +67,4 @@ const TabelaRegistroVendas = () => {
     </div>
   );
 };
-
-export default TabelaRegistroVendas;
+export default TabelaCadastroLogin;

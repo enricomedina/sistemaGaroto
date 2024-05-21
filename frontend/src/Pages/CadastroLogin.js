@@ -7,7 +7,7 @@ const CadastroLogin = () => {
     <>
       <div>
         <h2>Página Cadastro de login</h2>
-        <CadastroLoginForm />
+       <CadastroLoginForm/>
       </div>
     </>
   );

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const TabelaHistoricoClientes = () => {
-  const [historicoClientes, sethistoricoClienets] = useState([]);
+  const [historicoClientes, sethistoricoClientes] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get("http://localhost:3001/historicoClientes");
-        sethistoricoClienets(data);
+        sethistoricoClientes(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
       }
@@ -22,7 +22,7 @@ const TabelaHistoricoClientes = () => {
       await axios.delete(`http://localhost:3001/historicoClientes/${id}`);
       // Atualiza a lista de cadastros após a exclusão
       const { data } = await axios.get("http://localhost:3001/historicoClientes");
-      setregistroVendas(data);
+      sethistoricoClientes(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {
       console.error("Erro ao excluir usuário:", error);

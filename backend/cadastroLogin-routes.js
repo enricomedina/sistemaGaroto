@@ -33,9 +33,9 @@ router.get('/cadastroLogin/:id', (req, res) => {
 
 // Rota para criar um novo registro
 router.post('/cadastroLogin', (req, res) => {
-  const { usuario , email, senha } = req.body;
-  connection.query('INSERT INTO cadastroLogin (usuario , email, senha ) VALUES (?, ?, ?)',
-    [usuario , email, senha ], (err, result) => {
+  const { usuario , email, senha, idCadastroFuncionarios } = req.body;
+  connection.query('INSERT INTO cadastroLogin (usuario , email, senha, idCadastroFuncionarios ) VALUES (?, ?, ?, ?)',
+    [usuario , email, senha, idCadastroFuncionarios], (err, result) => {
       if (err) {
         console.error('Erro ao criar o registro:', err);
         res.status(500).json({ error: 'Erro ao criar o registro' });
@@ -48,9 +48,9 @@ router.post('/cadastroLogin', (req, res) => {
 // Rota para atualizar um registro existente pelo ID
 router.put('/cadastroLogin/:id', (req, res) => {
   const { id } = req.params;
-  const {usuario , email, senha  } = req.body;
-  connection.query('UPDATE cadastroLogin SET usuario = ?, email = ?, senha = ? , WHERE id = ?',
-    [usuario , email, senha , id], (err, result) => {
+  const {usuario , email, senha, idCadastroFuncionarios } = req.body;
+  connection.query('UPDATE cadastroLogin SET usuario = ?, email = ?, senha = ? ,  idCadastroFuncionarios= ?  WHERE id = ?',
+    [usuario , email, senha, idCadastroFuncionarios, id], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
         res.status(500).json({ error: 'Erro ao atualizar o registro' });
