@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const CadastroProdutosItem = ({ cadastroProdutos, onDelete }) => {
   return (
@@ -10,7 +10,13 @@ const CadastroProdutosItem = ({ cadastroProdutos, onDelete }) => {
       <td>{cadastroProdutos.preco}</td>
       <td>{cadastroProdutos.quantidade}</td>
       <td>
-        <button onClick={() => onDelete(cadastroProdutos.id)}>Excluir</button>
+        <button
+          colorScheme="teal"
+          variant="link"
+          onClick={() => onDelete(cadastroProdutos.id)}
+        >
+          Excluir
+        </button>
       </td>
     </tr>
   );
